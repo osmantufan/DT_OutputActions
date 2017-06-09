@@ -8,6 +8,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="slf4j-api-1.7.21" level="project" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="joda-time-2.2" level="project" />
+>>>>>>> b5d7e21317a4161dc536b36c3c747f58c29104c2
     <orderEntry type="library" name="sdk" level="project" />
   </component>
 </module>
