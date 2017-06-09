@@ -3,10 +3,6 @@
     <output-path>$PROJECT_DIR$/out/artifacts/DT_OutputActions_jar</output-path>
     <root id="archive" name="DT_OutputActions.jar">
       <element id="module-output" name="DT_OutputActions" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/sdk.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/slf4j-api-1.7.21.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/joda-time-2.2.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/postgresql-9.4.1212.jre6.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
