@@ -18,11 +18,12 @@ public class CalculateLocationOA extends AbstractOutputAction {
 	public int execute(OutputActionContext outputActionContext) throws Exception {
 		String lat1 = (String) outputActionContext.getParameter("lat1");
 		double dlat1 = Double.parseDouble(lat1);
-		String lat2 = (String) outputActionContext.getParameter("lat2");
+
+		String lat2 = getLat();
 		double dlat2 = Double.parseDouble(lat2);
 		String lon1 = (String) outputActionContext.getParameter("lon1");
 		double dlon1 = Double.parseDouble(lon1);
-		String lon2 = (String) outputActionContext.getParameter("lon2");
+		String lon2 =  getLon();
 		double dlon2 = Double.parseDouble(lon2);
 		
 		try {
@@ -34,6 +35,15 @@ public class CalculateLocationOA extends AbstractOutputAction {
 		 
 		return 0;
 	}
+	String getLat()
+    {
+        return "";
+    }
+
+    String getLon()
+    {
+        return "";
+    }
 	@Override
 	public ReturnParameter[] getRetParams()
 	  {
@@ -47,9 +57,7 @@ public class CalculateLocationOA extends AbstractOutputAction {
 	  {
 	    ArrayList<IOMParameter> actionParameters = new ArrayList();
 	    actionParameters.add(new IOMParameter("lat1", "lat1"));
-	    actionParameters.add(new IOMParameter("lat2", "lat2"));
 	    actionParameters.add(new IOMParameter("lon1", "lon1"));
-	    actionParameters.add(new IOMParameter("lon2", "lon2"));
 	    return actionParameters;
 	  }
 
