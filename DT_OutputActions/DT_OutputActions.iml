@@ -16,32 +16,15 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="sdk.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../EvamDesigner-4.3.16-Dogus/lib/sdk.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/sdk.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library name="joda-time-2.2.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../EvamDesigner-4.3.16-Dogus/lib/joda-time-2.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="slf4j-api-1.7.21.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../jars/slf4j-api-1.7.21.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" exported="" name="slf4j-api-1.7.21" level="project" />
   </component>
 </module>
