@@ -25,7 +25,7 @@ public class DT_POC_InsertOA extends AbstractOutputAction {
         String url = "jdbc:postgresql://10.115.210.26:5432/EVAMTESTDB219";
         String user = "evamtest";
         String password = "evamtest123";
-
+        //cihad
 
         Class.forName("org.postgresql.Driver");
         con = DriverManager.getConnection(url, user, password);
