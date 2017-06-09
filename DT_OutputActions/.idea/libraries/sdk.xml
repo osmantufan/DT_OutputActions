@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="sdk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../EvamDesigner-4.3.16-Dogus/lib/sdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../EvamDesigner-4.3.16-Dogus/lib/joda-time-2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
