@@ -6,6 +6,7 @@ import com.intellica.evam.sdk.outputaction.OutputActionContext;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by osman on 6/8/2017.
@@ -26,8 +27,9 @@ public class DT_POC_InsertOA extends AbstractOutputAction {
         String password = "evamtest123";
 
 
+        Class.forName("org.postgresql.Driver");
         con = DriverManager.getConnection(url, user, password);
-        String stm = "INSERT INTO fraudscenariosentmail(to, text) VALUES(?, ?)";
+        String stm = "INSERT INTO fraudscenariosentmail(mail_to, text) VALUES(?, ?)";
         pst = con.prepareStatement(stm);
 
         pst.setString(1,to);
@@ -40,11 +42,31 @@ public class DT_POC_InsertOA extends AbstractOutputAction {
 
     @Override
     protected ArrayList<IOMParameter> getParameters() {
-        return null;
+        ArrayList<IOMParameter> params = new ArrayList();
+        params.add(new IOMParameter("To", "TO"));
+        params.add(new IOMParameter("Text", "Body"));
+        return params;
     }
 
     @Override
     public String getVersion() {
         return null;
     }
+
+//    public static void main(String[] args)
+//  {
+//    OutputActionContext arg0 = new OutputActionContext();
+//    arg0.setReturnMap(new HashMap<String,Object>());
+//    arg0.setParameter("To", "osman.erenay@intellica.net");
+//    arg0.setParameter("Text", "HELLO");
+//
+//    try
+//    {
+//      new DT_POC_InsertOA().execute(arg0);
+//    }
+//    catch (Exception e)
+//    {
+//      e.printStackTrace();
+//    }
+//  }
 }
