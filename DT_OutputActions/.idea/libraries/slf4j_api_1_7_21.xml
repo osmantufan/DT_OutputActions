@@ -4,7 +4,6 @@
       <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.21.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/joda-time-2.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/postgresql-9.4.1212.jre6.jar!/" />
-      <root url="jar://E:/jars/slf4j-1.7.21/slf4j-jdk14-1.7.21.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
