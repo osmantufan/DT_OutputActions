@@ -1,12 +1,7 @@
 <component name="libraryTable">
   <library name="sdk">
     <CLASSES>
-<<<<<<< HEAD
-      <root url="jar://$PROJECT_DIR$/../../EvamDesigner-4.3.16-Dogus/lib/sdk.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../EvamDesigner-4.3.16-Dogus/lib/joda-time-2.2.jar!/" />
-=======
-      <root url="jar://E:/jars/outputActions/sdk.jar!/" />
->>>>>>> b5d7e21317a4161dc536b36c3c747f58c29104c2
+      <root url="jar://$PROJECT_DIR$/lib/sdk.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
