@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 public class ValidateLocationOA extends AbstractOutputAction {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ValidateLocationOA.class);
+	public String id="";
 
 	@Override
 	public int execute(OutputActionContext outputActionContext) throws Exception {
@@ -32,6 +33,7 @@ public class ValidateLocationOA extends AbstractOutputAction {
 
 
 		outputActionContext.getReturnMap().put("valueOut", distance(dlat1, dlon1, "K",delimeter));
+		outputActionContext.getReturnMap().put("id", id);
 
 		return 0;
 	}
@@ -41,8 +43,9 @@ public class ValidateLocationOA extends AbstractOutputAction {
 	@Override
 	public ReturnParameter[] getRetParams()
 	{
-		ReturnParameter[] response = new ReturnParameter[1];
+		ReturnParameter[] response = new ReturnParameter[2];
 		response[0] = new ReturnParameter("valueOut", ReturnType.String);
+		response[1] = new ReturnParameter("id", ReturnType.String);
 		return response;
 	}
 
@@ -53,15 +56,17 @@ public class ValidateLocationOA extends AbstractOutputAction {
 		actionParameters.add(new IOMParameter("lat1", "lat1"));
 		actionParameters.add(new IOMParameter("lon1", "lon1"));
 		actionParameters.add(new IOMParameter("delimeter", "delimeter"));
+
 		return actionParameters;
 	}
 
-	private static boolean distance(double lat1, double lon1, String unit, int delimeter ) {
+	private boolean distance(double lat1, double lon1, String unit, int delimeter ) {
 
 		String FILENAME = "locations.txt";
 		Double lon2,lat2;
 		BufferedReader br = null;
 		FileReader fr = null;
+
 
 
 		try {
@@ -71,12 +76,17 @@ public class ValidateLocationOA extends AbstractOutputAction {
 			String sCurrentLine;
 
 			br = new BufferedReader(new FileReader(FILENAME));
+			int index = 0;
 
-			while ((sCurrentLine = br.readLine()) != null) {
+			while ((sCurrentLine = br.readLine()) != null)
+			{
+				index++;
+				sCurrentLine=sCurrentLine+" "+index;
 
 				String[] kofteciLokasyonu = sCurrentLine.split("\\s+");
 				lon2 = Double.parseDouble(kofteciLokasyonu[1]);
 				lat2 = Double.parseDouble(kofteciLokasyonu[0]);
+				id=kofteciLokasyonu[2];
 
 				double theta = lon1 - lon2;
 				double dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2))
@@ -126,14 +136,14 @@ public class ValidateLocationOA extends AbstractOutputAction {
 	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 	/* :: This function converts decimal degrees to radians : */
 	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
-	private static double deg2rad(double deg) {
+	private double deg2rad(double deg) {
 		return (deg * Math.PI / 180.0);
 	}
 
 	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 	/* :: This function converts radians to decimal degrees : */
 	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
-	private static double rad2deg(double rad) {
+	private double rad2deg(double rad) {
 		return (rad * 180 / Math.PI);
 	}
 
