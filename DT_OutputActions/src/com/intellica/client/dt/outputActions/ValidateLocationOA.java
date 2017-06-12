@@ -8,6 +8,7 @@ import com.intellica.evam.sdk.outputaction.model.ReturnParameter;
 import com.intellica.evam.sdk.outputaction.model.ReturnType;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,16 +61,16 @@ public class ValidateLocationOA extends AbstractOutputAction {
 		return actionParameters;
 	}
 
-	private boolean distance(double lat1, double lon1, String unit, int delimeter ) {
+	private boolean distance(double lat1, double lon1, String unit, int delimeter ) throws IOException {
 
-		String FILENAME = "locations.txt";
+		String FILENAME = "conf/locations.txt";
 		Double lon2,lat2;
 		BufferedReader br = null;
 		FileReader fr = null;
 
 
 
-		try {
+
 			fr = new FileReader(FILENAME);
 			br = new BufferedReader(fr);
 
@@ -81,12 +82,14 @@ public class ValidateLocationOA extends AbstractOutputAction {
 			while ((sCurrentLine = br.readLine()) != null)
 			{
 				index++;
-				sCurrentLine=sCurrentLine+" "+index;
+				sCurrentLine=sCurrentLine+","+index;
 
-				String[] kofteciLokasyonu = sCurrentLine.split("\\s+");
+				String[] kofteciLokasyonu = sCurrentLine.split(",");
 				lon2 = Double.parseDouble(kofteciLokasyonu[1]);
 				lat2 = Double.parseDouble(kofteciLokasyonu[0]);
 				id=kofteciLokasyonu[2];
+
+				System.out.println(sCurrentLine);
 
 				double theta = lon1 - lon2;
 				double dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2))
@@ -105,27 +108,7 @@ public class ValidateLocationOA extends AbstractOutputAction {
 
 
 			}
-		} catch (IOException e) {
 
-			e.printStackTrace();
-
-		} finally {
-
-			try {
-
-				if (br != null)
-					br.close();
-
-				if (fr != null)
-					fr.close();
-
-			} catch (IOException ex) {
-
-				ex.printStackTrace();
-
-			}
-
-		}
 
 
 
@@ -163,22 +146,22 @@ public class ValidateLocationOA extends AbstractOutputAction {
 		return "v1.0";
 	}
 
-    public static void main(String[] args)
- {
-   OutputActionContext arg0 = new OutputActionContext();
-   arg0.setReturnMap(new HashMap<String,Object>());
-   arg0.setParameter("delimeter", "1");
-   arg0.setParameter("lat1", "-20.34");
-     arg0.setParameter("lon1", "57.55");
-
-   try
-   {
-     new ValidateLocationOA().execute(arg0);
-   }
-   catch (Exception e)
-   {
-     e.printStackTrace();
-   }
- }
+//    public static void main(String[] args)
+//	{
+//		OutputActionContext arg0 = new OutputActionContext();
+//		arg0.setReturnMap(new HashMap<String,Object>());
+//		arg0.setParameter("delimeter", "1");
+//		arg0.setParameter("lat1", "-20.3");
+//		arg0.setParameter("lon1", "50.0");
+//
+//		try
+//		{
+//			new ValidateLocationOA().execute(arg0);
+//		}
+//		catch (Exception e)
+//		{
+//			e.printStackTrace();
+//		}
+// }
 
 }
