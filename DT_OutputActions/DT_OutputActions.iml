@@ -25,9 +25,9 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="slf4j-api-1.7.21" level="project" />
     <orderEntry type="library" name="joda-time-2.2" level="project" />
     <orderEntry type="library" name="postgresql-9.4.1212.jre6" level="project" />
     <orderEntry type="library" name="sdk" level="project" />
+    <orderEntry type="library" name="slf4j-api-1.7.21" level="project" />
   </component>
 </module>
