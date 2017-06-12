@@ -8,7 +8,6 @@ import com.intellica.evam.sdk.outputaction.model.ReturnParameter;
 import com.intellica.evam.sdk.outputaction.model.ReturnType;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -89,31 +88,27 @@ public class ValidateLocationOA extends AbstractOutputAction {
 				lat2 = Double.parseDouble(kofteciLokasyonu[0]);
 				id=kofteciLokasyonu[2];
 
-				System.out.println(sCurrentLine);
-
-				double theta = lon1 - lon2;
-				double dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2))
-						+ Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.cos(deg2rad(theta));
-				dist = Math.acos(dist);
-				dist = rad2deg(dist);
-				dist = dist * 60 * 1.1515;
-				if (unit == "K") {
-					dist = dist * 1.609344;
-				} else if (unit == "N") {
-					dist = dist * 0.8684;
+				double distCalc= distanceCalculate(lat2,lon2,lat1,lon1);
+				if(distCalc<=delimeter)
+				{
+					System.out.println(id);
+					return true;
 				}
 
-				if(dist<=delimeter)
-					return true;
-
-
 			}
-
-
-
-
-
 		return false;
+	}
+
+
+	double distanceCalculate(double fromLat, double fromLon, double toLat, double toLon) {
+		double radius = 6378137;   // approximate Earth radius, *in meters*
+		double deltaLat = toLat - fromLat;
+		double deltaLon = toLon - fromLon;
+		double angle = 2 * Math.asin( Math.sqrt(
+				Math.pow(Math.sin(deltaLat/2), 2) +
+						Math.cos(fromLat) * Math.cos(toLat) *
+								Math.pow(Math.sin(deltaLon/2), 2) ) );
+		return radius * angle;
 	}
 
 	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -146,13 +141,14 @@ public class ValidateLocationOA extends AbstractOutputAction {
 		return "v1.0";
 	}
 
-//    public static void main(String[] args)
+//   public static void main(String[] args)
 //	{
 //		OutputActionContext arg0 = new OutputActionContext();
 //		arg0.setReturnMap(new HashMap<String,Object>());
-//		arg0.setParameter("delimeter", "1");
-//		arg0.setParameter("lat1", "-20.3");
-//		arg0.setParameter("lon1", "50.0");
+//		arg0.setParameter("delimeter", "10000");
+//		arg0.setParameter("lat1", "-25.274");
+//		arg0.setParameter("lon1", "133.775");
+//
 //
 //		try
 //		{
@@ -162,6 +158,6 @@ public class ValidateLocationOA extends AbstractOutputAction {
 //		{
 //			e.printStackTrace();
 //		}
-// }
+//	}
 
 }

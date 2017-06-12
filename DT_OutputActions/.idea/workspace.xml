@@ -21,14 +21,10 @@
       <file leaf-file-name="DT_POC_InsertOA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/intellica/client/dt/outputActions/DT_POC_InsertOA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
+            <state relative-caret-position="422">
               <caret line="70" column="5" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="70" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-                <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-                <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-                <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -47,8 +43,8 @@
       <file leaf-file-name="ValidateLocationOA.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/intellica/client/dt/outputActions/ValidateLocationOA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+            <state relative-caret-position="418">
+              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,8 +55,8 @@
       <file leaf-file-name="locations.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/locations.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="243" selection-end-column="20" />
+            <state relative-caret-position="136">
+              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -92,6 +88,7 @@
         <option value="$PROJECT_DIR$/src/com/intellica/client/dt/outputActions/SendEmailOA.java" />
         <option value="$PROJECT_DIR$/src/com/intellica/client/dt/outputActions/CalculateLocationOA.java" />
         <option value="$PROJECT_DIR$/locations.txt" />
+        <option value="$PROJECT_DIR$/conf/locations.txt" />
         <option value="$PROJECT_DIR$/src/com/intellica/client/dt/outputActions/ValidateLocationOA.java" />
       </list>
     </option>
@@ -105,7 +102,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -153,10 +150,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DT_OutputActions_jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -470,7 +463,7 @@
     <option name="totallyTimeSpent" value="6249000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -487,13 +480,13 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24895833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -511,7 +504,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -526,10 +519,6 @@
           <caret line="70" column="5" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="70" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -558,10 +547,6 @@
           <caret line="70" column="5" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="70" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -598,10 +583,6 @@
           <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -612,10 +593,6 @@
           <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -651,10 +628,6 @@
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -673,10 +646,6 @@
           <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -687,10 +656,6 @@
           <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -701,10 +666,6 @@
           <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -740,10 +701,6 @@
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -762,10 +719,6 @@
           <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -776,10 +729,6 @@
           <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -790,10 +739,6 @@
           <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -814,20 +759,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/intellica/client/dt/outputActions/SendEmailOA.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/intellica/client/dt/outputActions/DT_POC_InsertOA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="70" column="5" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="70" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1497253281847" expanded="true" signature="1307:1499" ph="{...}" />
-            <marker date="1497253281847" expanded="false" signature="1545:1556" ph=" { " />
-            <marker date="1497253281847" expanded="false" signature="1568:1574" ph=" }" />
-            <marker date="1497253281847" expanded="true" signature="1576:1995" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/intellica/client/dt/outputActions/ValidateLocationOA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -853,18 +784,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellica/client/dt/outputActions/DT_POC_InsertOA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="70" column="5" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="70" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/conf/locations.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="243" selection-end-column="20" />
+        <state relative-caret-position="136">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/intellica/client/dt/outputActions/ValidateLocationOA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+        <state relative-caret-position="418">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
