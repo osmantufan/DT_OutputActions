@@ -33,12 +33,14 @@ public class TemplateScenarioModules
     private String authorizationString;
     private final static String userAgentName = "Intellica Scenario Testing and Management Tools";
     private int index = 1;
+    private static final Logger LOGGER = LoggerFactory.getLogger(TemplateScenarioModules.class);
 
     public boolean sendPutToMdm(String fileName, String scenarioName, String mainScenarioName)
     {
 
         // URL url = new
         // URL("http://10.115.209.39:8080/v1/scenario/PZT_NOCOND/clone/PZT_NOCOND9");
+
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPut httpPut = new HttpPut(url + "/v1/scenario/" + mainScenarioName + "/clone/" + scenarioName);
@@ -69,13 +71,15 @@ public class TemplateScenarioModules
 
         CloseableHttpResponse response;
         try {
+            LOGGER.info("WEB SERVICE is calling");
             System.out.println("resume sending");
             response = httpClient.execute(httpPut);
-
+            LOGGER.info("Response: "+response.getStatusLine());
             System.out.println("Response: " + response.getStatusLine());
             httpClient.close();
         } catch (IOException e) {
             // TODO Auto-generated catch block
+            LOGGER.info(e.getMessage());
             e.printStackTrace();
             return false;
         }
@@ -108,6 +112,7 @@ public class TemplateScenarioModules
             httpClient.close();
         } catch (IOException e) {
             // TODO Auto-generated catch block
+            LOGGER.info(e.getMessage());
             e.printStackTrace();
             return false;
         }
@@ -247,6 +252,8 @@ public class TemplateScenarioModules
 
             writer.close();
         } catch (IOException e) {
+            LOGGER.info(e.getMessage());
+
             // do something
         }
 
