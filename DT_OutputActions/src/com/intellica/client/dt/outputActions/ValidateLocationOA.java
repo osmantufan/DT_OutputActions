@@ -151,23 +151,23 @@ public class ValidateLocationOA extends AbstractOutputAction {
 		return "v1.0";
 	}
 
-   public static void main(String[] args)
-	{
-		OutputActionContext arg0 = new OutputActionContext();
-		arg0.setReturnMap(new HashMap<String,Object>());
-		arg0.setParameter("delimeter", "10000");
-		arg0.setParameter("lat1", "77.553604");
-		arg0.setParameter("lon1", "23.670272");
-
-
-		try
-		{
-			new ValidateLocationOA().execute(arg0);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
+//   public static void main(String[] args)
+//	{
+//		OutputActionContext arg0 = new OutputActionContext();
+//		arg0.setReturnMap(new HashMap<String,Object>());
+//		arg0.setParameter("delimeter", "10000");
+//		arg0.setParameter("lat1", "77.553604");
+//		arg0.setParameter("lon1", "23.670272");
+//
+//
+//		try
+//		{
+//			new ValidateLocationOA().execute(arg0);
+//		}
+//		catch (Exception e)
+//		{
+//			e.printStackTrace();
+//		}
+//	}
 
 }

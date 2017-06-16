@@ -64,24 +64,24 @@ public class GenerateTemplateScenarioOA extends AbstractOutputAction
 
         return actionParameters;
     }
-    public static void main(String[] args)
-    {
-        OutputActionContext arg0 = new OutputActionContext();
-        arg0.setReturnMap(new HashMap<String,Object>());
-        arg0.setParameter("jsonFFvalue", "{\"ad\":\"cihad\",\"cinsiyet\":\"M\",\"id\":\"123\",\"soyad\":\"yildiz\"}");
-        arg0.setParameter("scenarioName", "dummtTemplate");
-
-
-
-        try
-        {
-            new GenerateTemplateScenarioOA().execute(arg0);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args)
+//    {
+//        OutputActionContext arg0 = new OutputActionContext();
+//        arg0.setReturnMap(new HashMap<String,Object>());
+//        arg0.setParameter("jsonFFvalue", "{\"ad\":\"cihad\",\"cinsiyet\":\"M\",\"id\":\"123\",\"soyad\":\"yildiz\"}");
+//        arg0.setParameter("scenarioName", "dummtTemplate");
+//
+//
+//
+//        try
+//        {
+//            new GenerateTemplateScenarioOA().execute(arg0);
+//        }
+//        catch (Exception e)
+//        {
+//            e.printStackTrace();
+//        }
+//    }
 
 
 
