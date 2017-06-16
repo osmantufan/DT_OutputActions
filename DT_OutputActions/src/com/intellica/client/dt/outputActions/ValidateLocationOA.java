@@ -23,17 +23,27 @@ public class ValidateLocationOA extends AbstractOutputAction {
 
 	@Override
 	public int execute(OutputActionContext outputActionContext) throws Exception {
-		int delimeter = Integer.parseInt((String) outputActionContext.getParameter("delimeter"));
+		try {
+			int delimeter = Integer.parseInt((String) outputActionContext.getParameter("delimeter"));
 
-		String lat1 = (String) outputActionContext.getParameter("lat1");
-		double dlat1 = Double.parseDouble(lat1);
+			String lat1 = (String) outputActionContext.getParameter("lat1");
+			double dlat1 = Double.parseDouble(lat1);
 
-		String lon1 = (String) outputActionContext.getParameter("lon1");
-		double dlon1 = Double.parseDouble(lon1);
+			String lon1 = (String) outputActionContext.getParameter("lon1");
+			double dlon1 = Double.parseDouble(lon1);
 
 
-		outputActionContext.getReturnMap().put("valueOut", distance(dlat1, dlon1, "K",delimeter));
-		outputActionContext.getReturnMap().put("id", id);
+			outputActionContext.getReturnMap().put("valueOut", distance(dlat1, dlon1, "K",delimeter));
+			outputActionContext.getReturnMap().put("id", id);
+		} catch (NumberFormatException e)
+		{
+			e.printStackTrace();
+			return -1;
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+			return -1;
+		}
 
 		return 0;
 	}
@@ -141,23 +151,23 @@ public class ValidateLocationOA extends AbstractOutputAction {
 		return "v1.0";
 	}
 
-//   public static void main(String[] args)
-//	{
-//		OutputActionContext arg0 = new OutputActionContext();
-//		arg0.setReturnMap(new HashMap<String,Object>());
-//		arg0.setParameter("delimeter", "10000");
-//		arg0.setParameter("lat1", "-25.274");
-//		arg0.setParameter("lon1", "133.775");
-//
-//
-//		try
-//		{
-//			new ValidateLocationOA().execute(arg0);
-//		}
-//		catch (Exception e)
-//		{
-//			e.printStackTrace();
-//		}
-//	}
+   public static void main(String[] args)
+	{
+		OutputActionContext arg0 = new OutputActionContext();
+		arg0.setReturnMap(new HashMap<String,Object>());
+		arg0.setParameter("delimeter", "10000");
+		arg0.setParameter("lat1", "77.553604");
+		arg0.setParameter("lon1", "23.670272");
+
+
+		try
+		{
+			new ValidateLocationOA().execute(arg0);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 
 }

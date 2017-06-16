@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jackson-core-2.6.7">
+    <CLASSES>
+      <root url="jar://E:/jars/corelib/jackson-core-2.6.7.jar!/" />
+      <root url="jar://E:/jars/corelib/jackson-annotations-2.6.0.jar!/" />
+      <root url="jar://E:/jars/corelib/jackson-core-asl-1.9.2.jar!/" />
+      <root url="jar://E:/jars/corelib/jackson-databind-2.6.7.jar!/" />
+      <root url="jar://E:/jars/corelib/jackson-mapper-asl-1.9.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

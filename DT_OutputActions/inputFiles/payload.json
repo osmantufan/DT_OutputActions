@@ -1,0 +1,43 @@
+{
+	"stDate": "05/03/2017 07:00",
+	"endDate": "30/06/2017 03:00",
+	"flexiFields":  [
+				{
+					"fieldDesc": "",
+					"fieldName": "ad",
+					"fieldType": "FREE_TEXT",
+					"fieldTypeDataStr": "",
+					"sensitive": "false",
+					"value": "osman",
+					"valueType": "String"
+				},
+				{
+					"fieldDesc": "",
+					"fieldName": "cinsiyet",
+					"fieldType": "COMBO_BOX",
+					"fieldTypeData": "",
+					"fieldTypeDataStr": "{\"comboBox\":[\"M\",\"F\"]}",
+					"sensitive": "false",
+					"value": "F",
+					"valueType": "String"
+				},
+				{
+					"fieldDesc": "",
+					"fieldName": "id",
+					"fieldType": "FREE_TEXT",
+					"fieldTypeDataStr": "",
+					"sensitive": "false",
+					"value": "1",
+					"valueType": "String"
+				},
+				{
+					"fieldDesc": "",
+					"fieldName": "soyad",
+					"fieldType": "FREE_TEXT",
+					"fieldTypeDataStr": "",
+					"sensitive": "false",
+					"value": "erenay",
+					"valueType": "String"
+				}
+			]
+}
