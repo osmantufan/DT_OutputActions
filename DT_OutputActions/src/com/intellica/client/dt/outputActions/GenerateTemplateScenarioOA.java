@@ -10,6 +10,8 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -33,9 +35,11 @@ public class GenerateTemplateScenarioOA extends AbstractOutputAction
             JSONObject json = new JSONObject(FFjson);
             TemplateScenarioModules tsm=new TemplateScenarioModules();
             tsm.updateProperties(scenarioName);
+            if(!Files.exists(Paths.get("inputFiles/"+scenarioName+".csv")))
             tsm.createCsv(scenarioName, json);
             tsm.addLineToCsv(scenarioName, json);
             tsm.generateScenario();
+
         } catch (Exception e)
         {
             return -1;
@@ -64,24 +68,24 @@ public class GenerateTemplateScenarioOA extends AbstractOutputAction
 
         return actionParameters;
     }
-//    public static void main(String[] args)
-//    {
-//        OutputActionContext arg0 = new OutputActionContext();
-//        arg0.setReturnMap(new HashMap<String,Object>());
-//        arg0.setParameter("jsonFFvalue", "{\"ad\":\"cihad\",\"cinsiyet\":\"M\",\"id\":\"123\",\"soyad\":\"yildiz\"}");
-//        arg0.setParameter("scenarioName", "dummtTemplate");
-//
-//
-//
-//        try
-//        {
-//            new GenerateTemplateScenarioOA().execute(arg0);
-//        }
-//        catch (Exception e)
-//        {
-//            e.printStackTrace();
-//        }
-//    }
+    public static void main(String[] args)
+    {
+        OutputActionContext arg0 = new OutputActionContext();
+        arg0.setReturnMap(new HashMap<String,Object>());
+        arg0.setParameter("jsonFFvalue", "{\"ad\":\"cihad\",\"cinsiyet\":\"M\",\"id\":\"123\",\"soyad\":\"yildiz\"}");
+        arg0.setParameter("scenarioName", "dummtTemplate");
+
+
+
+        try
+        {
+            new GenerateTemplateScenarioOA().execute(arg0);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 
 

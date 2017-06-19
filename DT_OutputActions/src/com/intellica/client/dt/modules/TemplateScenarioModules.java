@@ -125,7 +125,7 @@ public class TemplateScenarioModules
         properties.load(new FileReader(new File("conf/tester.properties")));
         properties.setProperty("BaseTemplateScenarioName", scenarioName);
         properties.setProperty("ScenarioInputFile", scenarioName + ".csv");
-        properties.setProperty("StartIndex", "" + index);
+
 
         FileOutputStream out = new FileOutputStream("conf/tester.properties");
         properties.store(out, null);
@@ -160,12 +160,19 @@ public class TemplateScenarioModules
         String[] headers = null;
         String[] flex = null;
         int instanceNum = startIndex;
+        int count=0;
 
         while ((line = bufferedReader.readLine()) != null) {
 
             if (headers == null) {
                 headers = line.split(";");
             } else {
+
+                count++;
+                if(count<startIndex)
+                {
+                    continue;
+                }
                 System.out
                         .println("line " + line.substring(0, 8) + " ... processing with instance number" + instanceNum);
                 flex = line.split(";");
@@ -215,7 +222,7 @@ public class TemplateScenarioModules
         bufferedReader.close();
         index = startIndex;
         for (int i = 0; i < instanceNum - startIndex; i++) {
-            index++;
+
             String scenarioName = baseScenarioName + (startIndex + i);
             if (!templateScenarioGenerator.sendResumeMessage(scenarioName)) {
                 System.err.println("Scenario can't resumed with name " + scenarioName);
@@ -223,6 +230,11 @@ public class TemplateScenarioModules
                 System.out.println("Scenario resumed with name " + scenarioName);
             }
         }
+        properties.setProperty("StartIndex", "" + instanceNum);
+
+        FileOutputStream out = new FileOutputStream("conf/tester.properties");
+        properties.store(out, null);
+        out.close();
 
     }
 
@@ -274,11 +286,17 @@ public class TemplateScenarioModules
 
         FFValuesToCsv = (FFValuesToCsv.substring(1)) ;
 
-        try (OutputStream out = new BufferedOutputStream(Files.newOutputStream(p, StandardOpenOption.APPEND))) {
-            out.write(FFValuesToCsv.getBytes());
-        } catch (IOException e) {
-            System.err.println(e);
+//        try (OutputStream out = new BufferedOutputStream(Files.newOutputStream(p, StandardOpenOption.APPEND))) {
+//            out.write(FFValuesToCsv.getBytes());
+//        } catch (IOException e) {
+//            System.err.println(e);
+//        }
+
+        try(PrintWriter output = new PrintWriter(new FileWriter(csvFile,true)))
+        {
+            output.printf("%s\r\n", FFValuesToCsv);
         }
+        catch (Exception e) {System.err.println(e);}
 
     }
 
