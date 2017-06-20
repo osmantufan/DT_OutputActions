@@ -1,6 +1,6 @@
 package com.intellica.client.dt.outputActions;
 
-import com.intellica.client.dt.modules.ScenarioStopper;
+import com.intellica.client.dt.modules.ScenarioStopperModule;
 import com.intellica.evam.sdk.outputaction.AbstractOutputAction;
 import com.intellica.evam.sdk.outputaction.IOMParameter;
 import com.intellica.evam.sdk.outputaction.OutputActionContext;
@@ -9,7 +9,6 @@ import com.intellica.evam.sdk.outputaction.model.ReturnType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -28,7 +27,7 @@ public class StopScenarioOA extends AbstractOutputAction
             String scenarioName=(String)outputActionContext.getParameter("scenarioName");
             String[] scenarioList=((String)outputActionContext.getParameter("templateScenarioList")).split(";");
 
-            ScenarioStopper stopTheScenario=new ScenarioStopper();
+            ScenarioStopperModule stopTheScenario=new ScenarioStopperModule();
             stopTheScenario.run(scenarioName,scenarioList);
 
 

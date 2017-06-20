@@ -3,7 +3,6 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -21,19 +20,19 @@ import org.slf4j.LoggerFactory;
 import com.evam.utils.model.view.mdm.CloneRequest;
 import com.evam.utils.model.view.mdm.FlexiField;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.HashMap;
+
 import java.util.Iterator;
 /**
  * Created by intellica on 6/15/2017.
  */
-public class TemplateScenarioModules
+public class TemplateScenarioModule
 {
     private static BufferedReader bufferedReader;
     private String url;
     private String authorizationString;
     private final static String userAgentName = "Intellica Scenario Testing and Management Tools";
     private int index = 1;
-    private static final Logger LOGGER = LoggerFactory.getLogger(TemplateScenarioModules.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TemplateScenarioModule.class);
 
     public boolean sendPutToMdm(String fileName, String scenarioName, String mainScenarioName)
     {
@@ -53,9 +52,6 @@ public class TemplateScenarioModules
         HttpPut httpPut = new HttpPut(String.valueOf(uri));
         System.out.println(url + "/v1/scenario/" + mainScenarioName + "/clone/" + scenarioName);
         httpPut.getParams().setParameter(CoreProtocolPNames.HTTP_CONTENT_CHARSET, "UTF-8");
-        // httpPut.addHeader("Authorization",
-        // "evam|6de621355ca07f5478f549e3c1a89563dccf9a041a837daa1dc5248b7210dfc1");
-        // httpPut.addHeader("Content-Type", "application/json;charset=UTF-8");
         httpPut.addHeader("Accept", "application/json, text/plain");
         httpPut.addHeader("Accept-Encoding", "gzip, deflate, sdch");
         httpPut.addHeader("Accept-Language", "en-US,en;q=0.8,fr;q=0.6,tr;q=0.4");
@@ -66,10 +62,6 @@ public class TemplateScenarioModules
         httpPut.addHeader("Referer", this.url + "/index.html");
         httpPut.addHeader("Origin", this.url);
         httpPut.addHeader("Connection", "keep-alive");
-
-        // HttpEntity reqEntity = (HttpEntity)
-        // EntityBuilder.create().chunked().setFile(new
-        // File("test/payload.json"));
         FileEntity reqEntity = new FileEntity(new File(fileName));
 
         httpPut.setEntity(reqEntity);
@@ -93,6 +85,13 @@ public class TemplateScenarioModules
 		/* Print the response */
 
         return true;
+    }
+    public void run(String scenarioName,String TemplateScenariName,JSONObject json) throws Exception {
+        updateProperties(scenarioName);
+        if(!Files.exists(Paths.get("inputFiles/"+scenarioName+".csv")))
+            createCsv(scenarioName, json);
+        addLineToCsv(scenarioName, json);
+        generateScenario(scenarioName,TemplateScenariName);
     }
 
     public boolean sendResumeMessage(String scenarioName) {
@@ -153,7 +152,7 @@ public class TemplateScenarioModules
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        TemplateScenarioModules templateScenarioGenerator = new TemplateScenarioModules();
+        TemplateScenarioModule templateScenarioGenerator = new TemplateScenarioModule();
         templateScenarioGenerator.setAuthorizationString(mdmAuthorization);
         templateScenarioGenerator.setUrl(mdmUrl);
 

@@ -11,7 +11,7 @@ import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
-public class ScenarioStopper {
+public class ScenarioStopperModule {
 
     private String url;
     private String authorizationString;
@@ -24,7 +24,7 @@ public class ScenarioStopper {
         httpDelete.addHeader("Accept", "application/json, text/plain");
         httpDelete.addHeader("Accept-Encoding", "gzip, deflate, sdch");
         httpDelete.addHeader("Accept-Language", "en-US,en;q=0.8,fr;q=0.6,tr;q=0.4");
-        httpDelete.addHeader("User-Agent", ScenarioStopper.userAgentName );
+        httpDelete.addHeader("User-Agent", ScenarioStopperModule.userAgentName );
         httpDelete.addHeader("Content-Type", "application/json;charset=UTF-8");
         httpDelete.addHeader("Authorization", authorizationString);
         httpDelete.addHeader("Host", this.url.replace("http://","").replace("https://",""));
@@ -52,26 +52,27 @@ public class ScenarioStopper {
         Properties properties = new Properties();
         properties.load( new FileReader(new File("conf/"+scenarioName+".properties")) );
 
-        String baseScenarioName = properties.getProperty("BaseTemplateScenarioName");
+        String baseScenarioName = scenarioName;
         int startIndex = Integer.parseInt(properties.getProperty("StartIndex"));
         String mdmUrl = properties.getProperty("MdmUrl");
         String mdmAuthorization = properties.getProperty("MdmAuthoriaztionText");
-        ScenarioStopper scenarioStopper = new ScenarioStopper();
-        scenarioStopper.setAuthorizationString(mdmAuthorization);
-        scenarioStopper.setUrl(mdmUrl);
+        ScenarioStopperModule scenarioStopperModule = new ScenarioStopperModule();
+        scenarioStopperModule.setAuthorizationString(mdmAuthorization);
+        scenarioStopperModule.setUrl(mdmUrl);
 
         if( args.length == 0 ){
             return;
         }
 
-        int count = Integer.parseInt( args[0] );
 
-
-        for (int i = 0; i < count; i++) {
-            System.err.println( "Scenario will deleted that named "+baseScenarioName+( startIndex+i ) );
-            scenarioStopper.sendResumeMessage(baseScenarioName+( startIndex+i ));
-            System.err.println( "Scenario deleted that named "+baseScenarioName+( startIndex+i ) );
+        for (String scenarios:args)
+        {
+            System.err.println( "Scenario will deleted that named "+scenarios );
+            scenarioStopperModule.sendResumeMessage(scenarios);
+            System.err.println( "Scenario deleted that named "+scenarios );
         }
+
+
 
 
     }

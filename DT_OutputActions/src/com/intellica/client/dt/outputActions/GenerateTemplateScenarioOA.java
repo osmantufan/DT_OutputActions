@@ -1,6 +1,6 @@
 package com.intellica.client.dt.outputActions;
 
-import com.intellica.client.dt.modules.TemplateScenarioModules;
+import com.intellica.client.dt.modules.TemplateScenarioModule;
 import com.intellica.evam.sdk.outputaction.AbstractOutputAction;
 import com.intellica.evam.sdk.outputaction.IOMParameter;
 import com.intellica.evam.sdk.outputaction.OutputActionContext;
@@ -34,13 +34,11 @@ public class GenerateTemplateScenarioOA extends AbstractOutputAction
             String scenarioName = (String) outputActionContext.getParameter("scenarioName");
             String TemplateScenariName= (String) outputActionContext.getParameter("templateScenarioName");;
             JSONObject json = new JSONObject(FFjson);
-            TemplateScenarioModules tsm=new TemplateScenarioModules();
-            tsm.updateProperties(scenarioName);
-            if(!Files.exists(Paths.get("inputFiles/"+scenarioName+".csv")))
-            tsm.createCsv(scenarioName, json);
-            tsm.addLineToCsv(scenarioName, json);
+            TemplateScenarioModule tsm=new TemplateScenarioModule();
+            tsm.run(scenarioName,TemplateScenariName,json);
 
-            tsm.generateScenario(scenarioName,TemplateScenariName);
+
+
 
         } catch (Exception e)
         {
@@ -74,24 +72,25 @@ public class GenerateTemplateScenarioOA extends AbstractOutputAction
 
         return actionParameters;
     }
-//    public static void main(String[] args)
-//    {
-//        OutputActionContext arg0 = new OutputActionContext();
-//        arg0.setReturnMap(new HashMap<String,Object>());
-//        arg0.setParameter("jsonFFvalue", "{\"ad\":\"cihad\",\"cinsiyet\":\"M\",\"id\":\"123\",\"soyad\":\"yildiz\"}");
-//        arg0.setParameter("scenarioName", "dummtTemplate");
-//
-//
-//
-//        try
-//        {
-//            new GenerateTemplateScenarioOA().execute(arg0);
-//        }
-//        catch (Exception e)
-//        {
-//            e.printStackTrace();
-//        }
-//    }
+    public static void main(String[] args)
+    {
+        OutputActionContext arg0 = new OutputActionContext();
+        arg0.setReturnMap(new HashMap<String,Object>());
+        arg0.setParameter("jsonFFvalue", "{\"ad\":\"cihad\",\"cinsiyet\":\"M\",\"id\":\"123\",\"soyad\":\"yildiz\"}");
+        arg0.setParameter("scenarioName", "dummtTemplate");
+        arg0.setParameter("templateScenarioName", "dummtTemplateTemp");
+
+
+
+        try
+        {
+            new GenerateTemplateScenarioOA().execute(arg0);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 
 
