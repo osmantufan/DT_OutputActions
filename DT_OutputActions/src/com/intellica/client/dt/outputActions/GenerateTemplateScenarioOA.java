@@ -32,16 +32,21 @@ public class GenerateTemplateScenarioOA extends AbstractOutputAction
         try {
             String FFjson = (String) outputActionContext.getParameter("jsonFFvalue");
             String scenarioName = (String) outputActionContext.getParameter("scenarioName");
+            String TemplateScenariName= (String) outputActionContext.getParameter("templateScenarioName");;
             JSONObject json = new JSONObject(FFjson);
             TemplateScenarioModules tsm=new TemplateScenarioModules();
             tsm.updateProperties(scenarioName);
             if(!Files.exists(Paths.get("inputFiles/"+scenarioName+".csv")))
             tsm.createCsv(scenarioName, json);
             tsm.addLineToCsv(scenarioName, json);
-            tsm.generateScenario();
+
+            tsm.generateScenario(scenarioName,TemplateScenariName);
 
         } catch (Exception e)
         {
+            LOGGER.debug(e.getMessage());
+            e.printStackTrace();
+            System.out.println(e.getMessage());
             return -1;
 
         }
@@ -64,35 +69,36 @@ public class GenerateTemplateScenarioOA extends AbstractOutputAction
     {
         ArrayList<IOMParameter> actionParameters = new ArrayList();
         actionParameters.add(new IOMParameter("jsonFFvalue", "Json FF value"));
-        actionParameters.add(new IOMParameter("scenarioName", "Template Scenario Name"));
+        actionParameters.add(new IOMParameter("scenarioName", "Base Scenario Name"));
+        actionParameters.add(new IOMParameter("templateScenarioName", "Template Scenario Name"));
 
         return actionParameters;
     }
-    public static void main(String[] args)
-    {
-        OutputActionContext arg0 = new OutputActionContext();
-        arg0.setReturnMap(new HashMap<String,Object>());
-        arg0.setParameter("jsonFFvalue", "{\"ad\":\"cihad\",\"cinsiyet\":\"M\",\"id\":\"123\",\"soyad\":\"yildiz\"}");
-        arg0.setParameter("scenarioName", "dummtTemplate");
-
-
-
-        try
-        {
-            new GenerateTemplateScenarioOA().execute(arg0);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args)
+//    {
+//        OutputActionContext arg0 = new OutputActionContext();
+//        arg0.setReturnMap(new HashMap<String,Object>());
+//        arg0.setParameter("jsonFFvalue", "{\"ad\":\"cihad\",\"cinsiyet\":\"M\",\"id\":\"123\",\"soyad\":\"yildiz\"}");
+//        arg0.setParameter("scenarioName", "dummtTemplate");
+//
+//
+//
+//        try
+//        {
+//            new GenerateTemplateScenarioOA().execute(arg0);
+//        }
+//        catch (Exception e)
+//        {
+//            e.printStackTrace();
+//        }
+//    }
 
 
 
 
     public String getDescription()
     {
-        return "returns whether the location of the truck is accaptable or not";
+        return "generate template scenario";
     }
 
     public boolean isReturnable()

@@ -43,8 +43,15 @@ public class TemplateScenarioModules
 
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPut httpPut = new HttpPut(url + "/v1/scenario/" + mainScenarioName + "/clone/" + scenarioName);
+        StringBuilder uri=new StringBuilder(url);
+        uri.append("/v1/scenario/");
+        uri.append(mainScenarioName );
+        uri.append("/clone/");
+        uri.append(scenarioName);
+        System.out.println(uri);
 
+        HttpPut httpPut = new HttpPut(String.valueOf(uri));
+        System.out.println(url + "/v1/scenario/" + mainScenarioName + "/clone/" + scenarioName);
         httpPut.getParams().setParameter(CoreProtocolPNames.HTTP_CONTENT_CHARSET, "UTF-8");
         // httpPut.addHeader("Authorization",
         // "evam|6de621355ca07f5478f549e3c1a89563dccf9a041a837daa1dc5248b7210dfc1");
@@ -122,21 +129,21 @@ public class TemplateScenarioModules
 
     public void updateProperties(String scenarioName) throws FileNotFoundException, IOException {
         Properties properties = new Properties();
-        properties.load(new FileReader(new File("conf/tester.properties")));
+        properties.load(new FileReader(new File("conf/"+scenarioName+".properties")));
         properties.setProperty("BaseTemplateScenarioName", scenarioName);
         properties.setProperty("ScenarioInputFile", scenarioName + ".csv");
 
 
-        FileOutputStream out = new FileOutputStream("conf/tester.properties");
+        FileOutputStream out = new FileOutputStream("conf/"+scenarioName+".properties");
         properties.store(out, null);
         out.close();
 
     }
 
-    public void generateScenario() throws Exception {
+    public void generateScenario(String scenarioName,String templateScenarioName) throws Exception {
 
         Properties properties = new Properties();
-        properties.load(new FileReader(new File("conf/tester.properties")));
+        properties.load(new FileReader(new File("conf/"+scenarioName+".properties")));
         String baseFileName = properties.getProperty("BaseTemplateJsonFile");
         String baseScenarioName = properties.getProperty("BaseTemplateScenarioName");
         String inputFile = properties.getProperty("ScenarioInputFile");
@@ -204,14 +211,14 @@ public class TemplateScenarioModules
 
                 newInstance.setFlexiFields(newFlexiList);
 
-                objectMapper.writeValue(new File("inputFiles/" + baseFileName + instanceNum + ".json"), newInstance);
-                System.out.println("File created with name " + baseFileName + instanceNum + ".json");
+                objectMapper.writeValue(new File("inputFiles/" + templateScenarioName + ".json"), newInstance);
+                System.out.println("File created with name " + templateScenarioName + ".json");
 
-                if (!templateScenarioGenerator.sendPutToMdm("inputFiles/" + baseFileName + instanceNum + ".json",
-                        baseScenarioName + instanceNum, baseScenarioName)) {
-                    System.err.println("Scenario can't created with name " + baseScenarioName + instanceNum);
+                if (!templateScenarioGenerator.sendPutToMdm("inputFiles/" + templateScenarioName + ".json",
+                        templateScenarioName, baseScenarioName)) {
+                    System.err.println("Scenario can't created with name " + templateScenarioName);
                 } else {
-                    System.out.println("Scenario created with name " + baseScenarioName + instanceNum);
+                    System.out.println("Scenario created with name " + templateScenarioName);
                 }
 
                 instanceNum++;
@@ -223,16 +230,16 @@ public class TemplateScenarioModules
         index = startIndex;
         for (int i = 0; i < instanceNum - startIndex; i++) {
 
-            String scenarioName = baseScenarioName + (startIndex + i);
-            if (!templateScenarioGenerator.sendResumeMessage(scenarioName)) {
-                System.err.println("Scenario can't resumed with name " + scenarioName);
+            //String templateScenarioName = baseScenarioName + (startIndex + i);
+            if (!templateScenarioGenerator.sendResumeMessage(templateScenarioName)) {
+                System.err.println("Scenario can't resumed with name " + templateScenarioName);
             } else {
-                System.out.println("Scenario resumed with name " + scenarioName);
+                System.out.println("Scenario resumed with name " + templateScenarioName);
             }
         }
         properties.setProperty("StartIndex", "" + instanceNum);
 
-        FileOutputStream out = new FileOutputStream("conf/tester.properties");
+        FileOutputStream out = new FileOutputStream("conf/"+scenarioName+".properties");
         properties.store(out, null);
         out.close();
 
