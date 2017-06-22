@@ -51,7 +51,6 @@ public class ScenarioStopperModule {
 
         Properties properties = new Properties();
         properties.load( new FileReader(new File("conf/"+scenarioName+".properties")) );
-
         String baseScenarioName = scenarioName;
         int startIndex = Integer.parseInt(properties.getProperty("StartIndex"));
         String mdmUrl = properties.getProperty("MdmUrl");

@@ -1,0 +1,108 @@
+{
+	"stDate": "05/03/2017 07:00",
+	"endDate": "30/06/2017 03:00",
+	"flexiFields": [
+        {
+          "fieldName": "aracMOTGrubu",
+          "fieldType": "FREE_TEXT",
+          "sensitive": "false",
+          "value": " ",
+          "valueType": "String"
+        },
+        {
+          "fieldName": "aracMOTGrubuOperand",
+          "fieldType": "COMBO_BOX",
+          "fieldTypeDataStr": "{\"comboBox\":[\"DEFAULT\",\"IN\",\"\\u003d\"]}",
+          "sensitive": "false",
+          "valueType": "String"
+        },
+        {
+          "fieldName": "arkaAksDagilimi",
+          "fieldType": "FREE_TEXT",
+          "sensitive": "false",
+          "value": "0",
+          "valueType": "Numeric"
+        },
+        {
+          "fieldName": "arkaAksDagilimiOperand",
+          "fieldType": "COMBO_BOX",
+          "fieldTypeDataStr": "{\"comboBox\":[\"DEFAULT\",\"\\u003c\",\"\\u003c\\u003d\",\"\\u003d\",\"\\u003e\",\"\\u003e\\u003d\"]}",
+          "sensitive": "false",
+          "valueType": "String"
+        },
+        {
+          "fieldName": "hizmetGrubu",
+          "fieldType": "FREE_TEXT",
+          "sensitive": "false",
+          "value": " ",
+          "valueType": "String"
+        },
+        {
+          "fieldName": "hizmetGrubuOperand",
+          "fieldType": "COMBO_BOX",
+          "fieldTypeData": {
+            "comboBox": {
+              "String": [
+                "=",
+                "DEFAULT",
+                "IN"
+              ]
+            }
+          },
+          "fieldTypeDataStr": "{\"comboBox\":[\"\\u003d\",\"DEFAULT\",\"IN\"]}",
+          "sensitive": "false",
+          "value": "DEFAULT",
+          "valueType": "String"
+        },
+        {
+          "fieldName": "istasyon",
+          "fieldType": "FREE_TEXT",
+          "sensitive": "false",
+          "value": " ",
+          "valueType": "String"
+        },
+        {
+          "fieldName": "istasyonOperand",
+          "fieldType": "COMBO_BOX",
+          "fieldTypeDataStr": "{\"comboBox\":[\"DEFAULT\",\"\\u003d\",\"IN\"]}",
+          "sensitive": "false",
+          "valueType": "String"
+        },
+        {
+          "fieldName": "kusurID",
+          "fieldType": "FREE_TEXT",
+          "sensitive": "false",
+          "value": "0",
+          "valueType": "Numeric"
+        },
+        {
+          "fieldName": "muayeneAdimi",
+          "fieldType": "FREE_TEXT",
+          "sensitive": "false",
+          "value": " ",
+          "valueType": "String"
+        },
+        {
+          "fieldName": "muayeneAdimiOperand",
+          "fieldType": "COMBO_BOX",
+          "fieldTypeDataStr": "{\"comboBox\":[\"\\u003d\",\"DEFAULT\"]}",
+          "sensitive": "false",
+          "value": "DEFAULT",
+          "valueType": "String"
+        },
+        {
+          "fieldName": "onAksDagilimi",
+          "fieldType": "FREE_TEXT",
+          "sensitive": "false",
+          "value": "0",
+          "valueType": "Numeric"
+        },
+        {
+          "fieldName": "onAksDagilimiOperand",
+          "fieldType": "COMBO_BOX",
+          "fieldTypeDataStr": "{\"comboBox\":[\"DEFAULT\",\"\\u003d\",\"\\u003c\",\"\\u003c\\u003d\",\"\\u003e\",\"\\u003e\\u003d\"]}",
+          "sensitive": "false",
+          "valueType": "String"
+        }
+      ]
+}

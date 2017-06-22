@@ -143,9 +143,9 @@ public class TemplateScenarioModule
 
         Properties properties = new Properties();
         properties.load(new FileReader(new File("conf/"+scenarioName+".properties")));
-        String baseFileName = properties.getProperty("BaseTemplateJsonFile");
-        String baseScenarioName = properties.getProperty("BaseTemplateScenarioName");
-        String inputFile = properties.getProperty("ScenarioInputFile");
+        String baseFileName = scenarioName+".json";
+        String baseScenarioName = scenarioName;
+        String inputFile = scenarioName+".csv";
         String mdmUrl = properties.getProperty("MdmUrl");
         String mdmAuthorization = properties.getProperty("MdmAuthoriaztionText");
         int startIndex = Integer.parseInt(properties.getProperty("StartIndex"));
@@ -156,7 +156,7 @@ public class TemplateScenarioModule
         templateScenarioGenerator.setAuthorizationString(mdmAuthorization);
         templateScenarioGenerator.setUrl(mdmUrl);
 
-        CloneRequest cloneRequest = objectMapper.readValue(new File("inputFiles/" + baseFileName + ".json"),
+        CloneRequest cloneRequest = objectMapper.readValue(new File("inputFiles/" + baseFileName),
                 CloneRequest.class);
 
         File instanceList = new File("inputFiles/" + inputFile);
@@ -226,6 +226,13 @@ public class TemplateScenarioModule
         }
 
         bufferedReader.close();
+
+
+        createTemplateJson(scenarioName, templateScenarioName, properties, startIndex, templateScenarioGenerator, instanceNum);
+
+    }
+
+    private void createTemplateJson(String scenarioName, String templateScenarioName, Properties properties, int startIndex, TemplateScenarioModule templateScenarioGenerator, int instanceNum) throws IOException {
         index = startIndex;
         for (int i = 0; i < instanceNum - startIndex; i++) {
 
@@ -241,7 +248,6 @@ public class TemplateScenarioModule
         FileOutputStream out = new FileOutputStream("conf/"+scenarioName+".properties");
         properties.store(out, null);
         out.close();
-
     }
 
     public String readLineFromCsv(String file) throws FileNotFoundException, IOException {
