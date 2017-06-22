@@ -26,7 +26,7 @@ public class StopScenarioOA extends AbstractOutputAction
     public int execute(OutputActionContext outputActionContext) {
         try {
             String scenarioName=(String)outputActionContext.getParameter("scenarioName");
-            String[] scenarioList=((String)outputActionContext.getParameter("templateScenarioList")).split(";");
+            String[] scenarioList=((String)outputActionContext.getParameter("templateScenarioName")).split(";");
 
             ScenarioStopperModule stopTheScenario=new ScenarioStopperModule();
             stopTheScenario.run(scenarioName,scenarioList);
@@ -47,9 +47,8 @@ public class StopScenarioOA extends AbstractOutputAction
     @Override
     public ReturnParameter[] getRetParams()
     {
-        ReturnParameter[] response = new ReturnParameter[2];
-        response[0] = new ReturnParameter("scenarioName", ReturnType.String);
-        response[1] = new ReturnParameter("templateScenarioList", ReturnType.String);
+        ReturnParameter[] response = new ReturnParameter[0];
+
         return response;
     }
 
@@ -57,6 +56,9 @@ public class StopScenarioOA extends AbstractOutputAction
     protected ArrayList<IOMParameter> getParameters()
     {
         ArrayList<IOMParameter> actionParameters = new ArrayList();
+
+        actionParameters.add(new IOMParameter("scenarioName", "Base Scenario Name"));
+        actionParameters.add(new IOMParameter("templateScenarioName", "Template Scenario Name"));
         return actionParameters;
     }
 //    public static void main(String[] args)

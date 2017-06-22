@@ -179,8 +179,7 @@ public class TemplateScenarioModule
                 {
                     continue;
                 }
-                System.out
-                        .println("line " + line.substring(0, 8) + " ... processing with instance number" + instanceNum);
+
                 flex = line.split(";");
                 CloneRequest newInstance = new CloneRequest();
                 newInstance.setStDate(cloneRequest.getStDate());
