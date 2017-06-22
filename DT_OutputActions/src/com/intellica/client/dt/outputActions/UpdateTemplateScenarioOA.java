@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by intellica on 6/19/2017.
@@ -65,6 +66,26 @@ public class UpdateTemplateScenarioOA  extends AbstractOutputAction
         actionParameters.add(new IOMParameter("templateScenarioName", "Template Scenario Name"));
         return actionParameters;
     }
+
+//    public static void main(String[] args)
+//    {
+//        OutputActionContext arg0 = new OutputActionContext();
+//        arg0.setReturnMap(new HashMap<String,Object>());
+//        arg0.setParameter("jsonFFvalue", "{\"aracMOTGrubu\": \"14\",\"arkaAksDagilimi\": \"14\",\"hizmetGrubu\": \"14\",\"istasyon\": \"14\",\"kusurID\": \"14\",\"muayeneAdimi\": \"14\",\"onAksDagilimi\": \"14\",\"aracMOTGrubuOperand\": \"=\",\"arkaAksDagilimiOperand\": \"=\",\"hizmetGrubuOperand\": \"=\",\"istasyonOperand\": \"=\",\"muayeneAdimiOperand\": \"=\",\"onAksDagilimiOperand\": \"=\"}");
+//        arg0.setParameter("scenarioName", "Rules_Template");
+//        arg0.setParameter("templateScenarioName", "Rules_1");
+//
+//
+//
+//        try
+//        {
+//            new UpdateTemplateScenarioOA().execute(arg0);
+//        }
+//        catch (Exception e)
+//        {
+//            e.printStackTrace();
+//        }
+//    }
 
     public String getDescription()
     {

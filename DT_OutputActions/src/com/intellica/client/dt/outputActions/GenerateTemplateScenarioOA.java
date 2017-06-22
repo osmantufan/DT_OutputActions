@@ -72,25 +72,27 @@ public class GenerateTemplateScenarioOA extends AbstractOutputAction
 
         return actionParameters;
     }
-    public static void main(String[] args)
-    {
-        OutputActionContext arg0 = new OutputActionContext();
-        arg0.setReturnMap(new HashMap<String,Object>());
-        arg0.setParameter("jsonFFvalue", "{\"ad\":\"cihad\",\"cinsiyet\":\"M\",\"id\":\"123\",\"soyad\":\"yildiz\"}");
-        arg0.setParameter("scenarioName", "dummtTemplate");
-        arg0.setParameter("templateScenarioName", "dummtTemplateTemp");
+//    public static void main(String[] args)
+//    {
+//        OutputActionContext arg0 = new OutputActionContext();
+//        arg0.setReturnMap(new HashMap<String,Object>());
+//        arg0.setParameter("jsonFFvalue", "{\"aracMOTGrubu\": \"13\",\"arkaAksDagilimi\": \"13\",\"hizmetGrubu\": \"13\",\"istasyon\": \"13\",\"kusurID\": \"13\",\"muayeneAdimi\": \"13\",\"onAksDagilimi\": \"13\",\"aracMOTGrubuOperand\": \"=\",\"arkaAksDagilimiOperand\": \"=\",\"hizmetGrubuOperand\": \"=\",\"istasyonOperand\": \"=\",\"muayeneAdimiOperand\": \"=\",\"onAksDagilimiOperand\": \"=\"}");
+//        arg0.setParameter("scenarioName", "Rules_Template");
+//        arg0.setParameter("templateScenarioName", "Rules_1");
+//
+//
+//
+//        try
+//        {
+//            new GenerateTemplateScenarioOA().execute(arg0);
+//        }
+//        catch (Exception e)
+//        {
+//            e.printStackTrace();
+//        }
+//    }
 
 
-
-        try
-        {
-            new GenerateTemplateScenarioOA().execute(arg0);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
 
 
 
