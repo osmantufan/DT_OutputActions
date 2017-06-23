@@ -30,6 +30,9 @@ public class UpdateTemplateScenarioOA  extends AbstractOutputAction
             String FFjson=(String)outputActionContext.getParameter("jsonFFvalue");
             String[] templateScenarioList=new String[1];
             templateScenarioList[0]=templateScenarioName;
+            FFjson=FFjson.substring(1,FFjson.length()-1);
+            FFjson= FFjson.replaceAll("\\\\", "");
+            System.out.println(FFjson);
             JSONObject json = new JSONObject(FFjson);
             ScenarioStopperModule stopTheScenario=new ScenarioStopperModule();
             stopTheScenario.run(scenarioName,templateScenarioList);
